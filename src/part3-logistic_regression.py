@@ -23,3 +23,7 @@ from sklearn.linear_model import LogisticRegression as lr
 # Your code here
 
 
+
+def tts(df_arrest): 
+    x = df_arrest[['pred+universe', 'num_fel_arrests_last_year']]
+    y = df_arrest['outcome']
