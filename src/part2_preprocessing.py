@@ -41,7 +41,7 @@ def dates(pred_universe_raw, arrest_events_raw):
     '''
     This converts two columns to datetime format. 
     
-    Parameters: 
+    Parameter: 
         pred_universe_raw (DF): contains predictive universe data.
         arrest_events_raw (DF): contains the arrest event data.
         
@@ -60,7 +60,7 @@ def merge(pred_universe_raw, arrest_events_raw):
     '''
     Completes a full outer join on "person_id" to create df_arrests.
     
-    Parameters: 
+    Parameter: 
         arrest_events_raw (df): contains predictive universe data.
         arrest_events_raw (DF): contains the arrest event data.
         
@@ -76,7 +76,7 @@ def finding_felony(arrest_events_raw, row):
     '''
     Going through row by row to see if a person was re-arrested for a felony within a year (365 days) after their original arrest date.
     
-    Parameters: 
+    Parameter: 
         arrest_events_raw (df): contains the arrest event data.
         row (series): rows from df_arrests (the merged dataframe).
         
@@ -102,7 +102,7 @@ def num_fel_arrests_last_year(row, arrest_events_raw):
     '''
     Counts the number of arrests in the previous year to the persons current arrest. 
     
-    Parameters: 
+    Parameter: 
         arrest_events_raw (df): contains the arrest event data.
         row (series): rows from df_arrests (the merged dataframe).
         
@@ -128,7 +128,7 @@ def add_columns_and_fix(df_arrests, arrest_events_raw):
     '''
     Adding the necessary columns and printing the requirements. 
     
-    Parameters: 
+    Parameter: 
         df_arrests (DF): The merged dataframe. 
         arrest_events_raw (Df): Contains the arrest event data.
         
@@ -162,6 +162,11 @@ def main():
     
     print(df_arrests.head())
     
+    
+    '''
+    In theory, this df_arrests dataframe would save as a csv file to the data directory and would be used in part 3.
+    
+    '''
     df_arrests.to_csv(data_directory / 'df_arrests.csv', index=False)
     
 if __name__ == "__main__": 

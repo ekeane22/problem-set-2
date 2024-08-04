@@ -16,6 +16,24 @@ Do both metrics agree that one model is more accurate than the other? Print this
 from sklearn.calibration import calibration_curve
 import matplotlib.pyplot as plt
 import seaborn as sns
+from pathlib import Path
+import pandas as pd
+
+
+
+data_directory = Path('../data') 
+
+def load_from_4(): 
+    '''
+    Loading the df_arrests csv from the data directory. 
+    
+    Returns: 
+        DF: the pandas dataframe from part 2 called df_arrests.
+    
+    '''
+    df_4= pd.read_csv(data_directory / 'df_4.csv')
+    return df_4
+
 
 # Calibration plot function 
 def calibration_plot(y_true, y_prob, n_bins=10):
@@ -43,3 +61,14 @@ def calibration_plot(y_true, y_prob, n_bins=10):
     plt.title("Calibration Plot")
     plt.legend(loc="best")
     plt.show()
+    
+def eval(): 
+    '''
+    If this function worked, it would evaluate part 3 and 4 based on calibration. 
+    
+    Returns: 
+        Print statement: which model has the best calibration. 
+    
+    '''
+    
+# I will hypothetically save this dataframe to the data directory and call it df_5.
